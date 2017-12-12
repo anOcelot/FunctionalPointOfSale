@@ -1,29 +1,14 @@
+;point of sale in scheme
+;by Rosa Fleming and Pieter Holleman
+
+
+
+;calculating tax
 (define tax_rate .065)
 (define (tax rate subtotal) (* subtotal (+ 1 rate)))
 (define (finish subtotal) (* tax_ratio subtotal))
 
-(define (checkout value sub)
-      (display "subtotal: ")(display sub)(display "\n")
-      (cond
-        
-        ((= value -1)
-          (display "Total: ")(display (tax .065 sub))
-          (display "\n")
-        )
-        (else 
-          (display "Item: $")
-          
-          (let ((v(read)))
-              (if (= v -1)
-                (checkout v (+ v sub))
-                (checkout v (+ v sub))
-              )    
-          )
-        )
-      )
-)
-
-
+;calculating subtotal
 (define (checkout2 value sub)
       ;(display value)
       ;(display " ")
@@ -50,6 +35,7 @@
       )
 )
 
+;run POS ("main" method)
 (define (run) 
   (display "pos system\n")
   (checkout2 0 0)
